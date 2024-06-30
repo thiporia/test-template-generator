@@ -34,7 +34,7 @@ jobs:
         run: bun run build
 
       - name: Create .nojekyll file
-        run: touch out/.nojekyll && gh-pages -d out
+        run: touch .nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0

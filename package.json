@@ -3,7 +3,7 @@
   "homepage": "https://thiporia.github.io/test-template-generator",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -r .next && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
