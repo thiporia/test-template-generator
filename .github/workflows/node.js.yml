@@ -19,14 +19,20 @@ jobs:
         with:
           node-version: "18.x"
 
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          export BUN_INSTALL="${HOME}/.bun"
+          export PATH="${BUN_INSTALL}/bin:${PATH}"
+
       - name: Installing my packages
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Extract repository name
         run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
 
       - name: Build my App
-        run: npm run build && touch ./out/.nojekyll
+        run: bun build && touch ./out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
