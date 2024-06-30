@@ -34,11 +34,11 @@ jobs:
         run: bun run build
 
       - name: Create .nojekyll file
-        run: touch .nojekyll
+        run: touch out/.nojekyll && gh-pages -d out
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           token: ${{ secrets.PAT }}
           branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy to.
+          folder: .next # The folder the action should deploy to.
