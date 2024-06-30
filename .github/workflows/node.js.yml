@@ -30,8 +30,11 @@ jobs:
       - name: Extract repository name
         run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
 
-      - name: Build my App
-        run: bun run build && touch ./out/.nojekyll
+      - name: Build Next.js app
+        run: bun run build
+
+      - name: Create .nojekyll file
+        run: touch .nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
