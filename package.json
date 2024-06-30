@@ -1,11 +1,13 @@
 {
   "name": "test-template-generator",
+  "homepage": "https://thiporia.github.io/test-template-generator",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
