@@ -19,19 +19,10 @@ jobs:
         with:
           node-version: "18.x"
 
-      - name: Install Bun
-        run: |
-          curl -fsSL https://bun.sh/install | bash
-          echo 'export BUN_INSTALL="${HOME}/.bun"' >> $GITHUB_ENV
-          echo 'export PATH="${BUN_INSTALL}/bin:${PATH}"' >> $GITHUB_ENV
-        shell: bash
-
-      - name: Set up Bun environment
-        run: |
-          export BUN_INSTALL="${HOME}/.bun"
-          export PATH="${BUN_INSTALL}/bin:${PATH}"
-          echo $BUN_INSTALL
-          echo $PATH
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: Installing my packages
         run: bun install --frozen-lockfile
