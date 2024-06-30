@@ -20,20 +20,20 @@ Test Template Generator는 함수 또는 React 컴포넌트를 입력받아 해�
 ### 1. 프로젝트 클론
 
 ```bash
-git clone https://github.com/your-username/test-template-generator.git
+git clone https://github.com/thiporia/test-template-generator.git
 cd test-template-generator
 ```
 
 ### 2. 의존성 설치
 
 ```bash
-npm install
+bun install
 ```
 
 ### 3. 개발 서버 실행
 
 ```bash
-npm run dev
+bun dev
 ```
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)으로 이동하여 애플리케이션을 확인할 수 있습니다.
@@ -49,39 +49,21 @@ npm run dev
 ```
 my-testing-template-app/
 ├── public/
-├── src/
+├── app/
 │   ├── components/
-│   │   └── TestInput.tsx
 │   ├── lib/
-│   │   └── parseFunction.ts
-│   │   └── parseComponent.ts
 │   ├── pages/
-│   │   ├── api/
-│   │   └── index.tsx
 │   ├── styles/
 │   ├── types/
 │   └── utils/
-│       └── generateTestTemplate.ts
-├── .eslintrc.js
+├── .eslintrc.json
 ├── .gitignore
-├── jest.config.js
-├── jest.setup.js
 ├── next.config.js
 ├── package.json
 ├── README.md
 └── tsconfig.json
 ```
 
-## 기여 방법
-
-기여를 환영합니다! 이 프로젝트에 기여하려면 다음 단계를 따라주세요:
-
-1. 이 저장소를 포크합니다.
-2. 새 브랜치를 만듭니다. (`git checkout -b feature/amazing-feature`)
-3. 변경 사항을 커밋합니다. (`git commit -m 'Add some amazing feature'`)
-4. 브랜치에 푸시합니다. (`git push origin feature/amazing-feature`)
-5. 풀 리퀘스트를 엽니다.
-
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 라이선스가 부여됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+이 프로젝트는 MIT 라이선스 하에 라이선스가 부여됩니다.
