@@ -22,8 +22,16 @@ jobs:
       - name: Install Bun
         run: |
           curl -fsSL https://bun.sh/install | bash
+          echo 'export BUN_INSTALL="${HOME}/.bun"' >> $GITHUB_ENV
+          echo 'export PATH="${BUN_INSTALL}/bin:${PATH}"' >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set up Bun environment
+        run: |
           export BUN_INSTALL="${HOME}/.bun"
           export PATH="${BUN_INSTALL}/bin:${PATH}"
+          echo $BUN_INSTALL
+          echo $PATH
 
       - name: Installing my packages
         run: bun install --frozen-lockfile
