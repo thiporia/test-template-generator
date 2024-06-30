@@ -31,7 +31,7 @@ jobs:
         run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
 
       - name: Build my App
-        run: bun build && touch ./out/.nojekyll
+        run: bun run build && touch ./out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
