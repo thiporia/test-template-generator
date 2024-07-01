@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,16 +22,13 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Installing my packages
-        run: bun install --frozen-lockfile
-
-      - name: Build Next.js app
-        run: bun run build
+      - name: Install and Build 🔧
+        run: |
+          bun install --frozen-lockfile
+          bun run build
+          touch out/.nojekyll
         env:
           NEXT_PUBLIC_BASE_PATH: /test-template-generator
-
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
