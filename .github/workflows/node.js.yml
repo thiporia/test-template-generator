@@ -27,8 +27,6 @@ jobs:
           bun install --frozen-lockfile
           bun run build
           touch out/.nojekyll
-        env:
-          NEXT_PUBLIC_BASE_PATH: /test-template-generator
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
