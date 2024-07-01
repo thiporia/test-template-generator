@@ -28,7 +28,7 @@ jobs:
       - name: Build Next.js app
         run: bun run build
         env:
-          NODE_ENV: production
+          NEXT_PUBLIC_BASE_PATH: /test-template-generator
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll

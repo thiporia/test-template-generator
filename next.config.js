@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
-const repoName = 'test-template-generator'; // GitHub 저장소 이름으로 변경하세요
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const nextConfig = {
-  assetPrefix: isProduction ? `/${repoName}/` : '/',
-  basePath: isProduction ? `/${repoName}` : '',
+  basePath,
+  assetPrefix: basePath,
   output: 'export',
   images: {
     unoptimized: true,
